@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Train route creator form</title>
+</head>
+
+<body>
+    <h1>Train route creator form</h1>
+
+    <form action="/admin_create_form" method="POST">
+        <p><label for="origin">Origin:</label> <input type="text" name="origin" /></p>
+        <p><label for="destination">Destination:</label> <input type="text" name="destination" /></p>
+        <p><label for="weekday">Day of week:</label> <input type="text" name="weekday" /></p>
+        <p><label for="hour">Hour:</label> <input type="text" name="hour" /></p>
+        <p><label for="price">Ticket price:</label> <input type="text" name="price" /></p>
+        <p><label for="traintype">Type of train:</label> <input type="text" name="traintype" /></p>
+        <p><input type="submit" value="Create route" /></p>
+    </form>
+
+    <a href="landing.html"> Return to landing page </a>
+</body>
+
+</html>

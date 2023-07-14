@@ -1,0 +1,23 @@
+<div class="<%= cls %>">
+    <h2 class="routeheader">
+        From: <%= item.origin %> ➜ To: <%= item.destination %>
+    </h2>
+    <p>
+    <div class="routebox">
+        <div id='date'>Day: <%= item.dayofweek %>, &nbsp; Hour: <%= item.hour %></div>
+
+        <div id='traintypediv'>Train type: <%= item.traintype %></div>
+        <div id='pricediv'>Price: <%= item.price %></div>
+    </div>
+
+    <br>
+        <h2 class="routeheader">Booked passengers:</h2>
+        <div class="routebox">
+            <% bookingwithnames.forEach((item)=> { %>
+                <div class="bookeduser" id="passenger_<%= item.foglalasID %>"><%= item.fullName %>
+                    <% if(locals.user==item.fullName){ %> <button class="removebooking" onclick="deleteBooking(`<%= item.foglalasID %>`)">Remove my booking</button><% } %>
+                </div> 
+            <% }); %>
+        </div>
+    <br>
+</div>

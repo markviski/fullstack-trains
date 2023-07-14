@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Booking details</title>
+    <link rel="stylesheet" href="/design.css">
+    <script src="../deleteBooking.js"></script>
+</head>
+
+<body>
+    <div class='loginright'>
+        <%- include('partials/login.ejs') %>
+    </div>
+    <h1>Booking details of route nr. <%= trainID%></h1>
+
+    <div id="info"></div>
+    <div id="error" class="error">
+        <%=error %>
+    </div>
+
+    <div class="boxed">
+        <% thisroute.forEach((item)=> { %>
+                <%- include('partials/routeboxDetails.ejs', {item, cls:"routefieldinside"}, bookingwithnames) %>
+            <% }); %>
+            
+        <div class="makebooking">
+            <h2 class="mbheader">Make a booking on this route</h2>
+            <form action="/train_booking_form/<%= trainID%>" method="POST">
+                <p><input type="submit" value="Confirm booking" /></p>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <a href="/" class="return"> Return to landing page </a>
+</body>
+
+</html>

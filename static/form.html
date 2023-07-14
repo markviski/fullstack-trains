@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SpaceX</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <a id="top" class="zoom-img" href="https://upload.wikimedia.org/wikipedia/commons/2/2e/SpaceX_logo_black.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SpaceX_logo_black.svg" alt="SpaceX"
+            height="100" />
+    </a>
+
+    <h1 class="topheader">SpaceX</h1>
+
+    <header>
+        <nav>
+            <div class="dashed">
+                <ul>
+                    <li>
+                        <a href="falcon9.html"> Falcon 9 </a>
+                    </li>
+                    <li>
+                        <a href="starlink.html"> Starlink </a>
+                    </li>
+                    <li>
+                        For more information, <a class="alt" href="https://www.spacex.com/"> visit SpaceX.com </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <article>
+        <h2 class="altalanos">Space Exploration Technologies Corp.</h2>
+        <section>
+            <h3 class="altalanos">Form</h3>
+            <form id="form" method="POST">
+                <p>Name: <input type="text" name="name" id="inputname" pattern="^[A-Z][a-z]+\s[A-Z][a-z]+$"
+                        onblur="nameFormatCheck()" required /></p>
+                <p id="name-format-error" style="display:none;"> Name should consist of name and surname, with capital
+                    letters as initials and separated with a space. (ex. Dan Smith)</p>
+                <p>Birthday: <input type="date" id="birthday" name="birthday" onblur="birthdayCheck()" required></p>
+                <p id="birthday-error" style="display:none;">Incorrect birthday. The minimum age is 18.</p>
+                <p>E-mail address: <input type="email" id="email" name="email" onchange="emailCheck(this.value)"></p>
+                <p id="email-format-error" style="display:none;">Incorrect email format or unaccepted email domain.
+                    (Email should be from gmail.com or yahoo.com)</p>
+                <p>Favourite website: <input type="url" id="link" name="link" onblur="linkCheck(this.value)"></p>
+                <p id="link-format-error" style="display:none;">Incorrect link format. (Should contain at least one
+                    domain and one subdomain. Characters allowed: lowercase, uppercase, numbers, underscore, hyphen)</p>
+                <p>Money: <input type="text" name="money" id="money" onblur="moneyCheck()" /></p>
+                <p>Currency: <select id="currency" name="currency" onchange="moneyCheck()">
+                        <option value="usd">USD</option>
+                        <option value="eur">EUR</option>
+                        <option value="gbp">GBP</option>
+                        <option value="ron">RON</option>
+                    </select></p>
+                <p id="money-format-error" style="display:none;">Invalid money format. Please use numbers and decimal
+                    point only (ex. 26.4 or 15)</p>
+                <p id="money-error" style="display:none;">Not enough money, you need at least 10 dollars worth of
+                    starting bet (converted in your currency).</p>
+            </form>
+            <button type="submit" id="submit" value="Submit" disabled='disabled' onclick="start()">Submit</button>
+        </section>
+
+        <div id="game" class="dashedgame" style="display:none;">
+            <p id="show-name"></p>
+            <p id="current-balance"></p>
+            <p id="game-info">Win: +2 dollars, Lose: -4 dollars</p>
+            <canvas id="result" width="200" height="100"></canvas><br>
+            <canvas id="gamecanvas" width="600" height="300"></canvas>
+            <button id="stop" onclick="endgame()">End game</button>
+        </div>
+
+    </article>
+
+
+    <h1 class="bottomheader">SpaceX</h1>
+
+    <footer id="last-modified-footer">
+        <p>Last modified: <span id="last-modified"> </span></p>
+    </footer>
+
+    <script src="form.js"></script>
+
+</body>
+
+</html>

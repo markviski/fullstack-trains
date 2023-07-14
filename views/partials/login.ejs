@@ -1,0 +1,24 @@
+<% if(!locals.user){ %>
+    <div class='logindiv'>
+        <form action="/login" method="POST" class="loginform">
+            <div class="loginform1">
+                <label>Name: </label>
+                <input type="text" name="username">
+            </div>
+            <div class="loginform1">
+                <label>Password: </label>
+                <input type="password" name="password">
+            </div>
+
+            <input type="submit" value="Login" id="login" />
+        </form>
+        <a href="/register"><button class='register'>Create new account</button></a>
+    </div>
+<% } else{ %>
+    <div class="loginform">
+        <p>Nice to see you, <%= user %> !</p>
+        <form action="/logout/logout" method='POST'>
+            <input type="submit" value="Logout" id="logout" />
+        </form>
+    </div>
+ <% } %>

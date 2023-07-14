@@ -1,0 +1,387 @@
+/* Viski Mark, vmim1980 */
+/* 1. */
+html {
+  min-height: 100%;
+}
+
+body {
+  background:
+    linear-gradient(
+      to top right,
+      rgb(141, 226, 184), rgb(70, 143, 192)
+    );
+}
+
+/* 3. */
+h1.topheader {
+  background: darkgray;
+  color: darkslategray;
+  font-family: serif;
+}
+
+h1.bottomheader {
+  font-style: italic;
+  color: darkslategray;
+  font-size: small;
+}
+
+/* links and lists */
+a.menu:hover {
+  color: rgb(7, 90, 65);
+  font-style: italic;
+}
+
+a:active {
+  color: limegreen;
+  font-style: oblique;
+}
+
+a.alt:hover {
+  color: rgb(239, 255, 14);
+  font-style: oblique;
+}
+
+a.alt:active {
+  color: rgb(255, 153, 0);
+  font-style: normal;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background: radial-gradient(
+    circle, rgb(110, 155, 218) 0%, rgb(86, 209, 147) 100%);
+}
+
+li a {
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  color: rgb(1, 5, 48);
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(14, 138, 101);
+  color: white;
+}
+/**/
+
+/* error and info */
+.error {
+  color: red;
+  font-size: large;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.errorcenter {
+  color: red;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.info {
+  font-size: large;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+/**/
+
+/* login and register */
+.loginform {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 5px;
+  margin: 5px;
+}
+
+.logindiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border: rgba(90, 236, 229, 0.2);
+}
+
+.loginform1 {
+  padding: 10px;
+}
+
+.loginright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 15px;
+  padding-top: 5px;
+}
+
+.registerform {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+} 
+
+.registerdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.registerform1 {
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  padding: 5px;
+}
+/**/
+
+/* landing page top */
+.landingtopdiv {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.landingtopdiv > .login {
+  padding-top: 25px;
+}
+/**/
+
+/* main logo */
+a.maintitle {
+  text-decoration: none;
+  color: black;
+}
+
+div.maintitle {
+  background: rgba(255, 255, 255, 0.226);
+  border-radius: 16px;
+  height: 64px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-size: xx-large;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: all 0.5s ease 0s;
+}
+
+div.maintitle:hover {
+  background: rgba(255, 255, 255, 0.473);
+  border-radius: 80px;
+  border: 1px solid rgba(118, 220, 238, 0.486);
+  transition: all 0.5s ease-in-out;
+}
+/**/
+
+.routefield, .boxed {
+  background: #83c248;
+  padding: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border: rgba(90, 236, 229, 0.2);
+  margin-bottom: 20px;
+}
+
+.routefieldinside {
+  background: #559b40;
+  padding: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border: rgba(90, 236, 229, 0.2);
+  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.routefield:hover, .routefieldinside:hover {
+  transition: all 0.4s ease 0s;
+}
+
+.loginform, .logindiv, .routefield:hover {
+  background-color: rgb(14, 138, 101);
+}
+
+.routefieldinside:hover {
+  background-color: rgb(7, 90, 65);
+}
+
+div.routebox {
+  background-color: #5f8664;
+  margin-left: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+  width: max-content;
+}
+
+button.removebooking {
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+input[type=submit], button, .return, select {
+  color: #494949 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  border: 2px solid #494949 !important;
+  margin-left: 7px;
+  display: inline-block;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+input[type=submit]:hover, button:hover, .return:hover, select:hover {
+  color: #ffffff !important;
+  background: #eb4b4b;
+  border-color: #eb4b4b !important;
+  border-radius: 80px;
+  transition: all 0.5s ease 0s;
+}
+
+option:hover {
+  transition: all 0.5s ease 0s;
+  background: #992f2f;
+}
+
+form {
+  font-size: large;
+}
+
+div {
+  border-radius: 15px;
+}
+
+p {
+  margin: 10px;
+}
+
+h2.routeheader {
+  margin: 10px;
+}
+
+h3 {
+  margin: 10px;
+  margin-left: 20px;
+}
+
+div.bookeduser {
+  padding: 10px;
+}
+
+div.makebooking > h2.mbheader {
+  padding-left: 20px;
+}
+
+.searchdiv {
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border: rgba(90, 236, 229, 0.2);
+} 
+
+/* details animation */
+summary {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+details {
+  cursor: pointer;
+  width: max-content;
+  transition: all 0.6s ease-in-out;
+  overflow: hidden;
+}
+
+details.searchdetails, details.menudetails {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 15px;
+  margin-top: 10px;
+  background: radial-gradient(
+    circle, rgba(63,94,251,1) 0%, rgba(70,252,161,1) 100%);
+}
+
+details.searchdetails {
+  text-align: center;
+}
+
+summary.menusummary {
+  padding-left: 4px;
+}
+
+div.searchdiv {
+  text-align: right;
+  padding-left: 10px;
+  margin-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+}
+
+details.searchdetails:not([open]) {
+  height: 38px;
+  width: 100px;
+}
+
+details.searchdetails[open] {
+  height: 280px;
+  width: 400px;
+}
+
+details.menudetails:not([open]) {
+  height: 38px;
+  width: 90px;
+}
+
+details.menudetails[open] {
+  height: 141px;
+  width: 300px;;
+}
+/**/
+
+h1.hmenu {
+  margin-top: 0px;
+}
+
+summary.routesdetailssum {
+  font-size: x-large;
+}
+
+summary.routesdetailssum::marker {
+  font-weight: normal;
+}
+
+summary.menusummary::marker, summary.searchsummary::marker {
+  content: "";
+}
+
+div.directroutes {
+  width: auto;
+  align-items: center;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+details.routesdetails {
+  width: auto;
+  align-items: center;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+footer {
+  text-align: center;
+  font-weight: lighter;
+  color: #666666;
+  font-style: italic;
+}

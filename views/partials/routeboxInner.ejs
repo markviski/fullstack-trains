@@ -1,0 +1,15 @@
+<div class="<%= cls %>" onclick="displayInformations(`<%= item.trainID %>`,`<$= item.divID`)">
+    <h2>
+        <%= item.trainID %>. From: <%= item.origin %> ➜ To: <%= item.destination %>
+    </h2>
+    <p>
+    <div id='date'>Day: <%= item.dayofweek %>, &nbsp; Hour: <%= item.hour %></div>
+
+    <div id='traintypediv_<%= item.divID %>'></div>
+    <div id='pricediv_<%= item.divID %>'></div>
+    <div id='errdiv_<%= item.divID %>'></div>
+    </p>
+
+    <a href="/see_bookings/<%= item.trainID %>"><button class='bookings'>See bookings for route <%= item.trainID %></button></a>
+    <br>
+</div>

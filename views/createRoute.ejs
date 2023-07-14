@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Train route creator form</title>
+    <link rel="stylesheet" href="/design.css">
+</head>
+
+<body>
+    <div class='loginright'>
+        <%- include('partials/login.ejs') %>
+    </div>
+    <h1>Train route creator form</h1>
+
+    <p class="error">
+        <%= error %>
+    </p>
+
+    
+    <% if(role=='admin'){ %>
+    <div class="boxed">
+    <form action="/create_route_form" method="POST">
+        <p><label for="origin">Origin:</label> <input type="text" name="origin" required pattern = "[A-Z][a-z]+(?:[, -][A-Z][a-z]+)*"/></p>
+        <p><label for="destination">Destination:</label> <input type="text" name="destination" required pattern = "[A-Z][a-z]+(?:[, -][A-Z][a-z]+)*"/></p>
+        <p><label for="weekday">Day of week:</label> <input type="text" name="weekday" required pattern = "[A-Z][a-z]+(?:[, -][A-Z][a-z]+)*"/></p>
+        <p><label for="hour">Hour:</label> <input type="text" name="hour" required pattern = "^\d+$"/></p>
+        <p><label for="price">Ticket price:</label> <input type="text" name="price" required pattern = "^\d+$"/></p>
+        <p><label for="traintype">Type of train:</label> <input type="text" name="traintype" required pattern = "[A-Z][a-z]+(?:[, -][A-Z][a-z]+)*"/></p>
+        <p><input type="submit" value="Create route" /></p>
+    </form>
+    </div>
+
+    <% } else{ %>
+        <div class='error'>Access denied: you are not admin</div>
+    <% } %>
+    
+    <a href="/" class="return"> Return to landing page </a>
+</body>
+
+</html>

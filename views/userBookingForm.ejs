@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Train ticket booking form</title>
+    <link rel="stylesheet" href="/design.css">
+</head>
+
+<body>
+    <div class='loginright'>
+        <%- include('partials/login.ejs') %>
+    </div>
+    <h1>Book your ticket now!</h1>
+
+    <p class="error">
+        <%=error %>
+    </p>
+
+    <div class="boxed">
+    <form action="/train_booking_form" method="POST">
+        <p><label>Select Route</label>
+            <select name='trainid' id='trainid'>
+                <% jaratok.forEach((tr)=> { %>
+                    <option value="<%= tr.trainID %>">
+                        <%= tr.trainID %>: <%= tr.origin %> -> <%= tr.destination %>
+                    </option>
+                    <% }); %>
+            </select>
+        </p>
+        <p><input type="submit" value="Confirm booking" /></p>
+    </form>
+    </div>
+
+    <a href="/" class="return"> Return to landing page </a>
+</body>
+
+</html>

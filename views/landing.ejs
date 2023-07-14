@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Train booking and information</title>
+    <link rel="stylesheet" href="/design.css">
+    <script src="displayInformations.js"></script>
+</head>
+
+<body>
+    <p class="errorcenter">
+        <%= error %>
+    </p>
+
+    <div class="landingtopdiv">
+        <details class="menudetails">
+            <summary class="menusummary">Menu</summary>
+            <div>
+                <ul>
+                    <li>
+                        <a class="menu" href="/create_route"> Create a new train route </a>
+                    </li>
+                    <li>
+                        <a class="menu" href="/booking"> Book a train ticket </a>
+                    </li>
+                    <li>
+                        <a class="menu" href="/list_my_bookings"> List my bookings </a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="searchdetails">
+            <summary class="searchsummary">Search</summary>
+            <div class="searchdiv">
+                <br>
+                <div>
+                    <form action="/route_search_form" method="POST">
+                        <p><label for="origin">Origin:</label> <input type="text" name="origin" pattern = "[A-Z][a-z]+(?:[, -][A-Z][a-z]+)*"/></p>
+                        <p><label for="destination">Destination:</label> <input type="text" name="destination" pattern = "[A-Z][a-z]+(?:[, -][A-Z][a-z]+)*"/></p>
+                        <p><label for="minprice">Minimum ticket price:</label> <input type="text" name="minprice" pattern = "^\d+$"/></p>
+                        <p><label for="maxprice">Maximum ticket price:</label> <input type="text" name="maxprice" pattern = "^\d+$"/></p>
+                        <p><input type="submit" value="Search" /></p>
+                    </form>
+                </div>
+            </div>
+        </details>
+
+        <div class='loginright'>
+            <%- include('partials/login.ejs') %>
+        </div>
+    </div>
+    <br>
+
+    
+
+    <br>
+    <div class="maintitle">
+        <a href="/" class="maintitle">
+            <p>🚂 The no. 1 online train ticket provider! 🚂</p>
+        </a>
+    </div>
+
+    <div>
+        <h1 class='title'>All Routes</h1>
+        <% if(jdirect.length===0 && jtransferone.length===0 && jtransfertwo.length===0){ %>
+            <div>Sorry, there are no routes available for the searched journey.</div>
+        <% } else{ %>
+            <div class="directroutes">
+                <h2>Direct routes</h2>
+                <% if(jdirect.length===0){ %>
+                    <div>No direct routes available, but there are routes with transfers.</div>
+                    <br>
+                <% } else{ %>
+                    <% jdirect.forEach((item)=> { %>
+                        <%- include('partials/routebox.ejs', {item, cls:"routefield", divID:item.divID}) %>
+                    <% }); %>
+                <% } %>
+            </div>
+
+            <% if(jtransferone.length>0){ %>
+                <details class="routesdetails">
+                    <summary class="routesdetailssum">Routes with 1 transfer</summary>
+                    <% jtransferone.forEach((itm)=> { %>
+                        <div class='routefield'>
+                            <h2 class="routeheader">
+                                From: <%= jaratok[itm.AtrainID-1].origin %> ➜ Via: <%= jaratok[itm.AtrainID-1].destination %> ➜ To: <%= jaratok[itm.BtrainID-1].destination %>
+                            </h2>
+                            <h3>Total price: <%= itm.totalprice %></h3>
+                            <%- include('partials/routebox.ejs', {item: jaratok[itm.AtrainID-1], cls:"routefieldinside", divID:itm.divID.concat("1")}) %>
+                            <%- include('partials/routebox.ejs', {item: jaratok[itm.BtrainID-1], cls:"routefieldinside", divID:itm.divID.concat("2")}) %>
+                        </div>
+                    <% }); %>
+                </details>
+            <% } %>
+            
+            <% if(jtransfertwo.length>0){ %>
+                <details class="routesdetails">
+                    <summary class="routesdetailssum">Routes with 2 transfers</summary>
+                    <% jtransfertwo.forEach((itm)=> { %>
+                        <div class='routefield'>
+                            <h2 class="routeheader">
+                                From: <%= jaratok[itm.AtrainID-1].origin %> ➜ Via: <%= jaratok[itm.AtrainID-1].destination %> ➜ Via: <%= jaratok[itm.BtrainID-1].destination %> ➜ To: <%= jaratok[itm.CtrainID-1].destination %>
+                            </h2>
+                            <h3>Total price: <%= itm.totalprice %></h3>
+                            <%- include('partials/routebox.ejs', {item: jaratok[itm.AtrainID-1], cls:"routefieldinside", divID:itm.divID.concat("1")}) %>
+                            <%- include('partials/routebox.ejs', {item: jaratok[itm.BtrainID-1], cls:"routefieldinside", divID:itm.divID.concat("2")}) %>
+                            <%- include('partials/routebox.ejs', {item: jaratok[itm.CtrainID-1], cls:"routefieldinside", divID:itm.divID.concat("3")}) %>
+                        </div>
+                    <% }); %>
+                </details>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+
+<footer>
+    The train booking company, Est. 2022
+</footer>
+
+</html>

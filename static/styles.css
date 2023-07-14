@@ -1,0 +1,146 @@
+/* Viski Mark, vmim1980 */
+/* 1. */
+body {
+  background-image: url("images/white.jpg");
+  background-repeat: repeat-x;
+}
+
+/* 2. */
+p, em {
+  color: rgb(6, 24, 104);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: x-large;
+}
+
+/* 3. */
+h1.topheader {
+  background: darkgray;
+  color: darkslategray;
+  font-family: serif;
+}
+
+h1.bottomheader {
+  font-style: italic;
+  color: darkslategray;
+  font-size: small;
+}
+
+/* 4. */
+.altalanos{
+  color: rgb(1, 40, 58);
+  font-family: serif;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 5. */
+a:hover {
+  color : green;
+  font-style: italic;
+}
+a:active {
+  color : limegreen;
+  font-style: oblique;
+}
+a:visited {
+  color : red;
+  font-style: normal;
+}
+
+a.alt:hover {
+  color : rgb(239, 255, 14);
+  font-style: oblique;
+}
+a.alt:active {
+  color : rgb(255, 153, 0);
+  font-style: normal;
+}
+a.alt:visited {
+  color : rgb(212, 0, 255);
+  font-style: italic;
+}
+
+/* 6. */
+h2 > p {
+  text-align: left;
+  font-size: large;
+}
+
+/* 7. */
+div.dashed{
+  border-style: dashed;
+  padding: 30px;
+}
+
+/* 8. */
+th:nth-child(n+2), td:nth-child(n+2) {
+  text-align: right;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+/* 9. */
+.rectangle {
+  height: 50px;
+  width: 100px;
+  background-color: rgb(209, 211, 82);
+  text-align: center;
+}
+
+.rect-container {
+  display: flex;
+}
+
+/* 10. */
+@media screen and (max-width: 600px) {
+  .rectangle {
+    display: flex;
+    width:100%;
+    text-align: center;
+  }
+
+  .rect-container:nth-child(1) {
+    display: flex;
+    width:10%
+  }
+  .rect-container:nth-child(2) {
+    display: flex;
+    width:20%
+  }
+  .rect-container:nth-child(3) {
+    display: flex;
+    width:30%
+  }
+  .rect-container:nth-child(4) {
+    display: flex;
+    width:40%
+  }
+
+  .stair {
+    display: flex;
+    white-space:nowrap;
+    width: 100%
+  }
+}
+
+/* misc. */
+.row {
+  display: flex;
+  border-style: solid;
+}
+.column {
+  flex: 50%;
+  padding: 5px;
+  align-self: center;
+}
+.column img{
+  max-width: 600px;
+}
+
+div.dashedgame{
+  background-color:rgb(233, 233, 233);
+  border-style: dashed;
+  padding-left: 50px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Train route search form</title>
+</head>
+
+<body>
+    <h1>Search for train routes</h1>
+
+    <form action="/route_search_form" method="POST">
+        <p><label for="origin">Origin:</label> <input type="text" name="origin" /></p>
+        <p><label for="destination">Destination:</label> <input type="text" name="destination" /></p>
+        <p><label for="minprice">Minimum ticket price:</label> <input type="text" name="minprice" /></p>
+        <p><label for="maxprice">Maximum ticket price:</label> <input type="text" name="maxprice" /></p>
+        <p><input type="submit" value="Search" /></p>
+    </form>
+
+    <a href="landing.html"> Return to landing page </a>
+</body>
+
+</html>
